@@ -1,0 +1,9 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>DeepSeek API Python Example</title>
+<meta name="description" content="Three lines to call DeepSeek with the OpenAI Python SDK. Free tokens included."></head>
+<body style="font-family:-apple-system,sans-serif;max-width:780px;margin:48px auto;padding:0 18px;line-height:1.75">
+<h1>DeepSeek API Python Example</h1>
+<pre style="background:#f4f4f4;padding:14px;border-radius:8px;overflow:auto"><code>from openai import OpenAI
+client = OpenAI(base_url="https://5pcloud.top/v1", api_key="YOUR_KEY")
+print(client.chat.completions.create(model="deepseek-chat", messages=[{"role":"user","content":"Hello"}]).choices[0].message.content)</code></pre>
+<p>Get your key + <b>10M free tokens</b>: <a href="https://5pcloud.top/?src=ghpages_py">5pcloud.top</a></p>
+</body></html>
