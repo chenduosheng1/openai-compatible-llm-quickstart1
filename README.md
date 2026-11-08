@@ -1,26 +1,24 @@
-# openai-compatible-llm-quickstart
+# 便宜的 OpenAI 兼容 API（DeepSeek 闲时低至 2.5 折）
 
-一行 base_url，接好你的 OpenAI 兼容大模型 API。
+不想被各家大模型厂商高价按量收割？这是一个 **OpenAI 兼容** 的 API 中转/聚合服务，代码一行不改，把 `base_url` 换成下面地址就能用。
 
-## Ara API — 注册送 1000 万 DeepSeek token，闲时低至 2.5 折
+## 为什么用 5pcloud.top
 
-兼容 OpenAI SDK，Cursor / Claude Code / LobeChat / n8n 改一处 `base_url` 即用。
+- **闲时 DeepSeek 低至 2.5 折**：深夜/闲时用 DeepSeek 跑批、跑 Agent 成本直接砍到脚踝。
+- **注册送 1000 万 token**：新用户上来就能白嫖跑通你的应用。
+- **支付宝 10 元起充**：不用办双币信用卡，国内钱包直接充。
+- **OpenAI 兼容**：OpenAI SDK、LangChain、NextChat、LobeChat、SillyTavern、OpenWebUI 全都直接接。
 
-- 注册即送 **1000 万 DeepSeek token**（免费试用）
-- **闲时低至 2.5 折**（DeepSeek 系列）
-- 支付宝 **10 元起充**，额度秒到账，不绑卡
-- 5 分钟接入，先跑通再付费
-
-### 快速开始
-
-```bash
-export OPENAI_API_KEY="你的Ara密钥"
-export OPENAI_BASE_URL="https://5pcloud.top/v1"
-```
+## 30 秒接入
 
 ```python
 from openai import OpenAI
-client = OpenAI(api_key="你的Ara密钥", base_url="https://5pcloud.top/v1")
+
+client = OpenAI(
+    base_url="https://5pcloud.top/v1",
+    api_key="你的密钥",  # 注册后在控制台获取
+)
+
 resp = client.chat.completions.create(
     model="deepseek-chat",
     messages=[{"role": "user", "content": "你好"}],
@@ -28,16 +26,17 @@ resp = client.chat.completions.create(
 print(resp.choices[0].message.content)
 ```
 
-### 注册
+## 支持的客户端
 
-免费注册领取 1000 万 token：https://5pcloud.top/register.html?src=github
+| 客户端 | 配置 |
+| --- | --- |
+| NextChat | API Base: `https://5pcloud.top` |
+| LobeChat | 自定义接口: `https://5pcloud.top` |
+| SillyTavern | API 类型 OpenAI，地址 `https://5pcloud.top` |
+| OpenWebUI | OPENAI_API_BASE_URL=`https://5pcloud.top/v1` |
 
-### 文档
+## 立即注册
 
-- 接入指南：https://5pcloud.top/quickstart.html?src=github
-- 价格：https://5pcloud.top/models.html?src=github
-- 博客教程：https://5pcloud.top/blog/
+👉 [注册领取 1000 万 token，闲时 DeepSeek 低至 2.5 折](https://5pcloud.top/?src=github_readme)
 
----
-
-低成本 OpenAI 兼容 API · DeepSeek 闲时 2.5 折 · 注册送 1000 万 token
+> 本站为第三方聚合服务，与官方模型厂商无隶属关系。
